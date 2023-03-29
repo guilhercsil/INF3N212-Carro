@@ -9,6 +9,8 @@ package model;
  * @author 182120069
  */
 public class Carro {
+
+    private String placa;
     private String marca;
     private String modelo;
     private int anoFab;
@@ -21,7 +23,8 @@ public class Carro {
     public Carro() {
     }
 
-    public Carro(String marca, String modelo, int anoFab, int anoMod, String cor, String tpCambio, String combustivel, Pessoa proprietário) {
+    public Carro(String placa, String marca, String modelo, int anoFab, int anoMod, String cor, String tpCambio, String combustivel, Pessoa proprietário) {
+        this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
         this.anoFab = anoFab;
@@ -32,7 +35,15 @@ public class Carro {
         this.proprietário = proprietário;
     }
 
-    public String getMarca() {
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+public String getMarca() {
         return marca;
     }
 
@@ -98,8 +109,8 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Carro{" + "marca=" + marca + ", modelo=" + modelo + ", anoFab=" + anoFab + ", anoMod=" + anoMod + ", cor=" + cor + ", tpCambio=" + tpCambio + ", combustivel=" + combustivel + ", propriet\u00e1rio=" + proprietário + '}';
+        return "Carro{" + "placa=" + placa + ", marca=" + marca + ", modelo=" + modelo + ", anoFab=" + anoFab + ", anoMod=" + anoMod + ", cor=" + cor + ", tpCambio=" + tpCambio + ", combustivel=" + combustivel + ", propriet\u00e1rio=" + proprietário + '}';
     }
-    
+
     
 }//fim classe carro
