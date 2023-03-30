@@ -18,12 +18,12 @@ public class Carro {
     private String cor;
     private String tpCambio;
     private String combustivel;
-    private Pessoa proprietário;//agragação da classe model Pessoa com Carro
+    private Pessoa proprietario;//agragação da classe model Pessoa com Carro
 
     public Carro() {
     }
 
-    public Carro(String placa, String marca, String modelo, int anoFab, int anoMod, String cor, String tpCambio, String combustivel, Pessoa proprietário) {
+    public Carro(String placa, String marca, String modelo, int anoFab, int anoMod, String cor, String tpCambio, String combustivel, Pessoa proprietario) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -32,7 +32,7 @@ public class Carro {
         this.cor = cor;
         this.tpCambio = tpCambio;
         this.combustivel = combustivel;
-        this.proprietário = proprietário;
+        this.proprietario = proprietario;
     }
 
     public String getPlaca() {
@@ -99,17 +99,17 @@ public String getMarca() {
         this.combustivel = combustivel;
     }
 
-    public Pessoa getProprietário() {
-        return proprietário;
+    public Pessoa getProprietario() {
+        return proprietario;
     }
 
-    public void setProprietário(Pessoa proprietário) {
-        this.proprietário = proprietário;
+    public void setProprietario(Pessoa proprietario) {
+        this.proprietario = proprietario;
     }
 
     @Override
     public String toString() {
-        return "Carro{" + "placa=" + placa + ", marca=" + marca + ", modelo=" + modelo + ", anoFab=" + anoFab + ", anoMod=" + anoMod + ", cor=" + cor + ", tpCambio=" + tpCambio + ", combustivel=" + combustivel + ", propriet\u00e1rio=" + proprietário + '}';
+        return "Carro{" + "placa=" + placa + ", marca=" + marca + ", modelo=" + modelo + ", anoFab=" + anoFab + ", anoMod=" + anoMod + ", cor=" + cor + ", tpCambio=" + tpCambio + ", combustivel=" + combustivel + ", propriet\u00e1rio=" + proprietario + '}';
     }
 
     

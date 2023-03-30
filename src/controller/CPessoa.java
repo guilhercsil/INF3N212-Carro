@@ -74,11 +74,11 @@ public class CPessoa {
         p1.setEndereco("Rua das Margaridas");
         addpessoa(p1);
         Pessoa p2 = new Pessoa();
-        p1.setIdPessoa(geraID());
-        p1.setCpf("24808624028");
-        p1.setNome("Madalena Espirito SAanto");
-        p1.setTelefone("51988998899");
-        p1.setEndereco("Rua sem saída");
+        p2.setIdPessoa(geraID());
+        p2.setCpf("24808624028");
+        p2.setNome("Madalena Espirito SAanto");
+        p2.setTelefone("51988998899");
+        p2.setEndereco("Rua sem saída");
         addpessoa(p2);
     }
 }//fim classe controller

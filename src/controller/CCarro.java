@@ -16,7 +16,7 @@ public class CCarro {
 
     ArrayList<Carro> carros = new ArrayList();
 
-    public void addCarros(Carro c) {
+    public void addCarro(Carro c) {
         this.carros.add(c);
     }
 
@@ -50,24 +50,20 @@ public class CCarro {
         c1.setTpCambio("Manual");
         c1.setCombustivel("Flex");
         c1.setCor("Bege");
-        c1.setProprietário(cadPessoa.getPessoaCPF("86345391050"));
+        c1.setProprietario(cadPessoa.getPessoaCPF("86345391050"));
         addCarro(c1);
 
         Carro c2 = new Carro();
-        c1.setPlaca("abc1g34");
-        c1.setAnoFab(2023);
-        c1.setAnoMod(2023);
-        c1.setMarca("Fiat");
-        c1.setModelo("Uno");
-        c1.setTpCambio("Manual");
-        c1.setCombustivel("Flex");
-        c1.setCor("Branco");
-        c1.setProprietário(cadPessoa.getPessoaCPF("24808624028"));
+        c2.setPlaca("abc1g34");
+        c2.setAnoFab(2023);
+        c2.setAnoMod(2023);
+        c2.setMarca("Fiat");
+        c2.setModelo("Uno");
+        c2.setTpCambio("Manual");
+        c2.setCombustivel("Flex");
+        c2.setCor("Branco");
+        c2.setProprietario(cadPessoa.getPessoaCPF("24808624028"));
         addCarro(c2);
-    }
-
-    private void addCarro(Carro c2) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     
