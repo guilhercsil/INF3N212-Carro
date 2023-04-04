@@ -76,7 +76,7 @@ public class CPessoa {
         Pessoa p2 = new Pessoa();
         p2.setIdPessoa(geraID());
         p2.setCpf("24808624028");
-        p2.setNome("Madalena Espirito SAanto");
+        p2.setNome("Madalena Espirito Santo");
         p2.setTelefone("51988998899");
         p2.setEndereco("Rua sem saída");
         addpessoa(p2);

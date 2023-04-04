@@ -8,6 +8,9 @@ import controller.CCarro;
 import controller.CPessoa;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import model.Carro;
+import model.Pessoa;
+import util.Validadores;
 
 /**
  *
@@ -40,7 +43,6 @@ public class INF3N212Carro {
                         opSM = leiaNumInt();
                         switch (opSM) {
                             case 1:
-                                System.out.println("--Cadastrar--");
                                 if (opM == 1) {
                                     cadastrarPessoa();
                                 } else {
@@ -52,15 +54,14 @@ public class INF3N212Carro {
                                 if (opM == 1) {
                                     editarPessoa();
                                 } else {
-                                    cadastrarCarro();
+                                    editarCarro();
                                 }
                                 break;
                             case 3:
-                                System.out.println("--Listar--");
                                 if (opM == 1) {
                                     listarPessoa();
                                 } else {
-                                    cadastrarCarro();
+                                    listarCarro();
                                 }
                                 break;
                             case 4:
@@ -68,7 +69,7 @@ public class INF3N212Carro {
                                 if (opM == 1) {
                                     deletarPessoa();
                                 } else {
-                                    cadastrarCarro();
+                                    deletarCarro();
                                 }
                                 break;
                             case 0:
@@ -127,7 +128,53 @@ public class INF3N212Carro {
     }//fim subMenu
 
     private static void cadastrarPessoa() {
-        System.out.println("Pessoa");
+        System.out.println("-- Cadastro de Pessoa --");
+        int idPessoa;
+        String nome;
+        String cpf;
+        String endereco;
+        String telefone;
+        boolean tcpf = true;
+
+        do {
+            System.out.print("Informe o CPF ");
+            cpf = leia.nextLine();
+            tcpf = Validadores.isCPF(cpf);
+            if (tcpf) {
+                if (cadPessoa.getPessoaCPF(cpf) != null) {
+                    System.out.println("CPF já cadastrado!");
+                    System.out.println("1 - Tentar novamente");
+                    System.out.println("2 - Cancelar cadastro");
+                    System.out.println("Digite aqui: ");
+                    int op = leiaNumInt();
+                    if (op == 2) {
+                        return;
+                    }
+                } else {
+                    tcpf = false;
+                }
+            } else {
+                System.out.println("CPF inválido!");
+                System.out.println("1 - Tentar novamente");
+                System.out.println("2 - Cancelar cadastro");
+                System.out.println("Digite aqui: ");
+                int op = leiaNumInt();
+                if (op == 2) {
+                    return;
+                }
+                tcpf = true;
+            }
+        } while (tcpf);
+        System.out.print("Informe o nome: ");
+        nome = leia.nextLine();
+        System.out.print("Informe o endereço: ");
+        endereco = leia.nextLine();
+        System.out.print("Informe o telefone: ");
+        telefone = leia.nextLine();
+        idPessoa = cadPessoa.geraID();
+        Pessoa p = new Pessoa(idPessoa, nome, cpf, endereco, telefone);
+        cadPessoa.addpessoa(p);
+        System.out.println(p.getNome()+ " cadastrado com sucesso!");
     }
 
     private static void cadastrarCarro() {
@@ -137,10 +184,31 @@ public class INF3N212Carro {
     private static void editarPessoa() {
     }
 
+    private static void editarCarro() {
+
+    }
+
     private static void listarPessoa() {
+        System.out.println("-- Lista de Pessoas --");
+        for (Pessoa pessoa : cadPessoa.getPessoa()) {
+            System.out.println(pessoa.toString());
+        }
+    }
+
+    private static void listarCarro() {
+        System.out.println("-- Lista de Carros --");
+        for (Carro carro : cadCarro.getCarros()) {
+            System.out.println(carro.toString());
+        }
+
     }
 
     private static void deletarPessoa() {
+
+    }
+
+    private static void deletarCarro() {
+
     }
 
 }//fim classe
