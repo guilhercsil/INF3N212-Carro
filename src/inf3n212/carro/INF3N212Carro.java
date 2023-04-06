@@ -177,7 +177,34 @@ public class INF3N212Carro {
     }
 
     private static void cadastrarCarro() {
-        System.out.println("Carro");
+        System.out.println("-- Cadastrar Carro --");
+        String placa;
+        String marca;
+        String modelo;
+        int anoFab;
+        int anoMod;
+        String cor;
+        String tpCambio;
+        String combustivel;
+        Pessoa proprietario;
+        boolean pCarro = true;
+        do {
+            System.out.print("Informe a Placa: ");
+            placa = leia.nextLine();
+            pCarro = Validadores.validarPlaca(placa);
+            if (pCarro) {
+                Carro carro = cadCarro.getCarroPlaca(placa);
+                if (carro == null) {
+                    
+                }else{
+                    System.out.println("Placa já cadastrada.");
+                    pCarro = false;
+                }
+            }else{
+                System.out.println("Placa inválida!Tente novamente!");
+                pCarro = true;
+            }
+        } while (pCarro);
     }
 
     private static void editarPessoa() {
@@ -195,25 +222,29 @@ public class INF3N212Carro {
                     System.out.println("2 - Endereço");
                     System.out.println("3 - Telefone");
                     System.out.println("4 - Todos");
-                    System.out.println("0 - Cancelar");
+                    System.out.println("0 - Voltar");
                     System.out.println("Digite aqui:");
                     int op = leiaNumInt();
                     if (op == 1 || op == 4) {
                         System.out.println("Informe o novo nome: ");
                         p.setNome(leia.nextLine());
                     }
-                     if (op == 2 || op == 4) {
+                    if (op == 2 || op == 4) {
                         System.out.println("Informe o novo endereço: ");
-                        p.setNome(leia.nextLine());
+                        p.setEndereco(leia.nextLine());
                     }
-                      if (op == 3 || op == 4) {
+                    if (op == 3 || op == 4) {
                         System.out.println("Informe o novo telefone: ");
-                        p.setNome(leia.nextLine());
+                        p.setTelefone(leia.nextLine());
                     }
-                      if (op == 0){
-                          System.out.println("Operação cancelada pelo usuário!");
-                          isCPF = false;
-                      }
+                    if (op == 0) {
+                        System.out.println("Operação cancelada pelo usuário!");
+                        isCPF = false;
+                    }
+                    if (op < 0 || op > 4) {
+                        System.out.println("Opção inválida, tente novamente!");
+                    }
+                    while (isCPF);
                 } else {
                     System.out.println("CPF não cadastrado!");
                     isCPF = false;
