@@ -80,7 +80,7 @@ public class Validadores {
                 + CPF.substring(6, 9) + "-" + CPF.substring(9, 11));
     }
 
-    public static boolean validarPlaca(String placa) {
+     public static boolean validarPlaca(String placa) {
         boolean placaValida = true;
 
         if (placa.length() > 0) {
@@ -113,4 +113,6 @@ public class Validadores {
         
         return anoOK;
     }
+
+    
 }//fim classe

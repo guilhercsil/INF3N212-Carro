@@ -42,7 +42,7 @@ public class CCarro {
 
     public void mockCarro() {
         Carro c1 = new Carro();
-        c1.setPlaca("abc1f34");
+        c1.setPlaca("ABC1F34");
         c1.setAnoFab(2023);
         c1.setAnoMod(2023);
         c1.setMarca("Fiat");
@@ -54,7 +54,7 @@ public class CCarro {
         addCarro(c1);
 
         Carro c2 = new Carro();
-        c2.setPlaca("abc1g34");
+        c2.setPlaca("ABC1G34");
         c2.setAnoFab(2023);
         c2.setAnoMod(2023);
         c2.setMarca("Fiat");
