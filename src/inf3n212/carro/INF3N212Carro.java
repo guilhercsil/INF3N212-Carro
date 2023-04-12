@@ -368,6 +368,9 @@ public class INF3N212Carro {
                                         cadastrarPessoa();
                                     }
                                 }
+                            }else{
+                                System.out.println("CPF inválido, tente novamente!");
+                                isCPF = true;
                             }
                         } while (isCPF);                       
                     }
